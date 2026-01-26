@@ -1,0 +1,12 @@
+Below is the link to my blog post detailing the errors and my fixes: 
+https://zoerprogramming.wordpress.com/2026/01/25/module-2-assignment/
+
+And here is the code directly from RStudio
+
+assignment2 <- c(16, 18, 14, 22, 27, 17, 19, 17, 17, 22, 20, 22)
+
+myMean <- function(assignment2) {
+  return(sum(assignment2) / length(assignment2))
+}
+
+myMean(assignment2)
