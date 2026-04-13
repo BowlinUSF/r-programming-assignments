@@ -1,0 +1,51 @@
+---
+title: "My R Markdown Primer"
+author: "Zoe Bowlin"
+date: "2026-04-11"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+Blog link: https://zoerprogramming.wordpress.com/2026/04/12/assignment-12-introduction-to-r-markdown/
+
+This is an example of the markdown text of a narrative paragraph! As you can see, it is not impacting the actual code we are running, as these dedicated sections are designed to explain and provide summary of what the chunks will do. The chunk below will show the loading of an R dataset, and plotting of it with a simple ggplot2 plot with Iris.
+
+
+```{r iris}
+summary(iris)
+head(iris)
+
+#Simple ggplot2
+library(ggplot2)
+
+ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) + 
+  geom_point()
+
+```
+
+## Including Plots
+
+The below is the default text that came with the creation of this Markdown file, and I will keep it simply to still see what populates by default. Below is my example of using a LaTeX Math expression plotted within R
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+
+#install.packages("latex2exp")
+library(latex2exp)
+plot(1, main = TeX(r"($\alpha + \beta = \gamma$)"))
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
